@@ -39,5 +39,5 @@ wheels/
 
 # Local runtime data (do not commit)
 quantdinger.db
-data/
+/data/
 
