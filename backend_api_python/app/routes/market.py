@@ -87,13 +87,14 @@ def get_market_types():
     cfg = load_addon_config()
     data = (cfg.get('market', {}) or {}).get('types')
     if not isinstance(data, list) or not data:
+        # Order: USStock > Crypto > Forex > Futures > HShare > AShare
         data = [
             {'value': 'USStock', 'i18nKey': 'dashboard.analysis.market.USStock'},
             {'value': 'Crypto', 'i18nKey': 'dashboard.analysis.market.Crypto'},
             {'value': 'Forex', 'i18nKey': 'dashboard.analysis.market.Forex'},
             {'value': 'Futures', 'i18nKey': 'dashboard.analysis.market.Futures'},
-            {'value': 'AShare', 'i18nKey': 'dashboard.analysis.market.AShare'},
-            {'value': 'HShare', 'i18nKey': 'dashboard.analysis.market.HShare'}
+            {'value': 'HShare', 'i18nKey': 'dashboard.analysis.market.HShare'},
+            {'value': 'AShare', 'i18nKey': 'dashboard.analysis.market.AShare'}
         ]
     return jsonify({'code': 1, 'msg': 'success', 'data': data})
 

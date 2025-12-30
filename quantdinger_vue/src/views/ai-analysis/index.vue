@@ -1128,25 +1128,25 @@ export default {
             i18nKey: `dashboard.analysis.market.${key}`
           }))
         } else {
-          // 如果获取失败，使用默认值
+          // 如果获取失败，使用默认值 (Order: USStock > Crypto > Forex > Futures > HShare > AShare)
           this.marketTypes = [
             { value: 'USStock', i18nKey: 'dashboard.analysis.market.USStock' },
             { value: 'Crypto', i18nKey: 'dashboard.analysis.market.Crypto' },
             { value: 'Forex', i18nKey: 'dashboard.analysis.market.Forex' },
             { value: 'Futures', i18nKey: 'dashboard.analysis.market.Futures' },
-            { value: 'AShare', i18nKey: 'dashboard.analysis.market.AShare' },
-            { value: 'HShare', i18nKey: 'dashboard.analysis.market.HShare' }
+            { value: 'HShare', i18nKey: 'dashboard.analysis.market.HShare' },
+            { value: 'AShare', i18nKey: 'dashboard.analysis.market.AShare' }
           ]
         }
       } catch (error) {
-        // 如果获取失败，使用默认值
+        // 如果获取失败，使用默认值 (Order: USStock > Crypto > Forex > Futures > HShare > AShare)
         this.marketTypes = [
           { value: 'USStock', i18nKey: 'dashboard.analysis.market.USStock' },
           { value: 'Crypto', i18nKey: 'dashboard.analysis.market.Crypto' },
           { value: 'Forex', i18nKey: 'dashboard.analysis.market.Forex' },
           { value: 'Futures', i18nKey: 'dashboard.analysis.market.Futures' },
-          { value: 'AShare', i18nKey: 'dashboard.analysis.market.AShare' },
-          { value: 'HShare', i18nKey: 'dashboard.analysis.market.HShare' }
+          { value: 'HShare', i18nKey: 'dashboard.analysis.market.HShare' },
+          { value: 'AShare', i18nKey: 'dashboard.analysis.market.AShare' }
         ]
       }
 
