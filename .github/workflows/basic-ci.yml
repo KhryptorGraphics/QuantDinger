@@ -81,15 +81,20 @@ jobs:
         with:
           node-version: '20'
           # Use Node.js 20 to meet dependency requirements (commander@14.0.0 requires Node >= 20)
+          # Note: Dockerfile uses Node 18, but dependencies require Node 20
 
       - name: Install dependencies
         working-directory: ./quantdinger_vue
+        env:
+          HUSKY: 0
+          # Disable husky in CI (git hooks are not needed in CI environment)
         run: |
           # Project uses yarn (as specified in package.json packageManager field)
           # Enable corepack to use the correct yarn version
           corepack enable
           yarn install --frozen-lockfile
           # Use --frozen-lockfile to ensure reproducible builds and fail if lockfile is out of sync
+          # HUSKY=0 prevents husky install from running (not needed in CI)
 
       - name: Frontend lint check
         working-directory: ./quantdinger_vue
